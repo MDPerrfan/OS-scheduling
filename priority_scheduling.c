@@ -14,7 +14,7 @@ int main(){
         scanf("%d%d%d",&a[i].at,&a[i].bt,&a[i].pr);
         temp[i]=a[i].bt;
     }
-    a[9].pr=9;
+    a[9].pr=-1;
     int gchart[100];
     int gct[100];
     int gindex=0;
@@ -29,7 +29,7 @@ int main(){
         gchart[gindex]=short_p;
         gct[gindex]=t+1;
         gindex++;
-        if(a[i].bt==0){
+        if(a[short_p].bt==0){
             count++;
             a[short_p].wt=t+1-a[short_p].at-temp[short_p];
             a[short_p].tat= t+1 -a[short_p].at;
@@ -45,7 +45,7 @@ int main(){
     }
     printf("\nGantt Chart:\n");
     for (i = 0; i < gindex; i++) {
-        printf("| P%d %d ", gchart[i] + 1,a[i].ct);
+        printf("| P%d %d ", gchart[i] + 1,gct[i]);
     }
     printf("|\n");
 
