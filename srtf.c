@@ -10,7 +10,7 @@ int main(){
         scanf("%d",&bt[i]);
         rt[i]=bt[i];
     }
-    printf("\nProcess\t|Turnaround Time|Waiting Time\n");
+    printf("\nProcess\t|Turnaround Time|Waiting Time|Gantt chart\n");
     for(time=0;remain!=n;time++){
         for(i=0;i<n;i++){
             if(at[i]<=time && rt[i]){
@@ -21,7 +21,7 @@ int main(){
         if(rt[smallest]==0){
             remain++;
             CT=time+1;
-            printf("\nP%d\t|\t%d\t|\t%d\t",smallest+1,CT-at[smallest],CT-at[smallest]-bt[smallest]);
+            printf("\nP%d\t|\t%d\t|\t%d\t|\t%d\t",smallest+1,CT-at[smallest],CT-at[smallest]-bt[smallest],CT);
             twt+=CT-at[smallest]-bt[smallest];
             ttat+=CT-at[smallest];
         }
