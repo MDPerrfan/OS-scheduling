@@ -9,9 +9,13 @@ int main(){
     float twt=0,ttat=0;
     printf("Enter the number of Processes:");
     scanf("%d",&n);
-    printf("Enter: \nArrival Time|\nBurst Time\n|Priority\n");
     for(i=0;i<n;i++){
-        scanf("%d%d%d",&a[i].at,&a[i].bt,&a[i].pr);
+        printf("\nEnter arrival time for process %d: ", i + 1);
+        scanf("%d", &a[i].at);
+        printf("\nEnter burst time for process %d: ", i + 1);
+        scanf("%d",a[i].bt);
+        printf("nEnter Priority for process %d: ", i + 1);
+        scanf("%d",a[i].pr);
         temp[i]=a[i].bt;
     }
     a[9].pr=-1;
