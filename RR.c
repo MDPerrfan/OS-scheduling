@@ -5,6 +5,7 @@ int main() {
     printf("Enter Number of Processes: ");
     scanf("%d", &n);
     int at[n], bt[n], temp_bt[n];
+
     for (int i = 0; i < n; i++) {
         printf("P%d Arrival Time: ", i + 1);
         scanf("%d", &at[i]);
@@ -12,10 +13,13 @@ int main() {
         scanf("%d", &bt[i]);
         temp_bt[i] = bt[i];
     }
+
     printf("Enter Time Quantum: ");
     scanf("%d", &ts);
+
     int wt = 0, tat = 0;
     int done, t = 0;
+
     printf("Gantt Chart: ");
     while (1) {
         done = 1;
@@ -39,9 +43,12 @@ int main() {
             break;
         }
     }
+
     float avg_wt = (float)wt / n;
     float avg_tat = (float)tat / n;
+    
     printf("\nAverage Waiting Time: %.2f\n", avg_wt);
     printf("Average Turnaround Time: %.2f\n", avg_tat);
+
     return 0;
 }
